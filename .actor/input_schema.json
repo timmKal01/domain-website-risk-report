@@ -1,0 +1,46 @@
+{
+    "title": "Domain & Website Risk Report Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "domains": {
+            "title": "Domains",
+            "type": "array",
+            "editor": "stringList",
+            "description": "Domains to build a risk report for, e.g. \"example.com\". A bare domain, not a full URL."
+        },
+        "includeTechStack": {
+            "title": "Include tech stack check",
+            "type": "boolean",
+            "editor": "checkbox",
+            "description": "Fetch the site's homepage and detect CMS, ecommerce platform, JS framework, analytics, CDN, payment, and live-chat signatures.",
+            "default": true
+        },
+        "includeSubdomains": {
+            "title": "Include subdomain discovery",
+            "type": "boolean",
+            "editor": "checkbox",
+            "description": "Search Certificate Transparency logs (crt.sh) for subdomains that have had a certificate issued.",
+            "default": true
+        },
+        "maxSubdomains": {
+            "title": "Max subdomains returned",
+            "type": "integer",
+            "editor": "number",
+            "description": "Cap on discovered subdomains listed per domain.",
+            "default": 20,
+            "minimum": 1,
+            "maximum": 100
+        },
+        "ctDaysBack": {
+            "title": "Certificate Transparency lookback (days)",
+            "type": "integer",
+            "editor": "number",
+            "description": "How far back to search Certificate Transparency logs for subdomain discovery.",
+            "default": 365,
+            "minimum": 1,
+            "maximum": 3650
+        }
+    },
+    "required": ["domains"]
+}

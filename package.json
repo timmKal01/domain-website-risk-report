@@ -1,0 +1,16 @@
+{
+    "name": "domain-website-risk-report",
+    "version": "0.1.0",
+    "type": "module",
+    "description": "One report per domain: registration/expiration status, SSL certificate health, subdomains discovered via Certificate Transparency logs, and the live site's tech stack, with computed risk flags.",
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "dependencies": {
+        "apify": "^3.2.6",
+        "cheerio": "^1.0.0-rc.12"
+    },
+    "scripts": {
+        "start": "node src/main.js"
+    }
+}

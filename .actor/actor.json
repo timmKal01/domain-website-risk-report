@@ -1,0 +1,13 @@
+{
+    "actorSpecification": 1,
+    "name": "domain-website-risk-report",
+    "title": "Domain & Website Risk Report — SSL, Subdomains & Tech Stack",
+    "description": "One report per domain: registration/expiration status, SSL certificate health, subdomains discovered via Certificate Transparency logs, and the live site's tech stack, with a computed list of risk flags. Built for security, IT, and vendor-risk teams.",
+    "version": "0.1",
+    "meta": {
+        "templateId": "custom-no-proxy"
+    },
+    "input": "./input_schema.json",
+    "output": "./output_schema.json",
+    "dockerfile": "../Dockerfile"
+}
