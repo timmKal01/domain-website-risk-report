@@ -10,11 +10,11 @@ function sleep(ms) {
 }
 
 /**
- * crt.sh is a free community service that returns bare error pages (HTML, not JSON) under load —
+ * crt.sh is a free community service that returns bare error pages (HTML, not JSON) under load :
  * observed as both 404 and 502 for the *same* query on different attempts, so these are not a
  * reliable "zero results" signal. Retry transient-looking failures instead of treating them as
  * empty results. Same retry budget as certificate-transparency-monitor, tuned there against real
- * crt.sh outages — see that actor's crtsh.js for the incident history behind these numbers.
+ * crt.sh outages: see that actor's crtsh.js for the incident history behind these numbers.
  */
 async function fetchWithRetry(url) {
     let lastError;
