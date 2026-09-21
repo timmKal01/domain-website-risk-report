@@ -86,6 +86,10 @@ Each check runs independently and reports its own failure without failing
 the others: e.g. a domain with no live website still gets a full
 registration and SSL report, with `techStack.reachable: false`.
 
+## Pricing note
+
+Billed per **domain**, not per individual check performed. One charge covers the full report for that domain, registration and expiration, SSL certificate health, subdomain discovery via Certificate Transparency logs, and tech stack detection, rather than four separate charges for what would otherwise be four separate lookups.
+
 ## Related products
 
 - [Domain Expiration Tracker](https://github.com/timmKal01/domain-expiration-tracker): registration/expiration only, for bulk monitoring across many domains
