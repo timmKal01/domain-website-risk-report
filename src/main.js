@@ -8,18 +8,24 @@ await Actor.init();
 
 const input = (await Actor.getInput()) ?? {};
 const {
-    domains = [],
     includeTechStack = true,
     includeSubdomains = true,
     maxSubdomains = 20,
     ctDaysBack = 365,
 } = input;
+let { domains } = input;
 
 /** Must match the event name configured in this Actor's pay-per-event pricing on Apify. */
 const DOMAIN_REPORT_EVENT = 'domain-report';
 
-if (!Array.isArray(domains) || domains.length === 0) {
-    throw new Error('Input "domains" must be a non-empty array, e.g. ["example.com"].');
+// An empty run (first click in the Console, Apify's daily health check) used to
+// throw here and got the actor flagged "under maintenance". Run the example instead.
+if (domains === undefined || (Array.isArray(domains) && domains.length === 0)) {
+    domains = ['apify.com'];
+    log.info('No domains given; defaulting to the example "apify.com".');
+}
+if (!Array.isArray(domains)) {
+    throw new Error('Input "domains" must be an array of domains, e.g. ["example.com"].');
 }
 
 function extractSubdomains(certificates, rootDomain, max) {

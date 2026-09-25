@@ -7,7 +7,9 @@
             "title": "Domains",
             "type": "array",
             "editor": "stringList",
-            "description": "Domains to build a risk report for, e.g. \"example.com\". A bare domain, not a full URL."
+            "description": "Domains to build a risk report for, e.g. \"example.com\". A bare domain, not a full URL.",
+            "prefill": ["apify.com"],
+            "default": ["apify.com"]
         },
         "includeTechStack": {
             "title": "Include tech stack check",
