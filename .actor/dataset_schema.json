@@ -1,0 +1,84 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "transformation": {
+                "fields": [
+                    "domain",
+                    "registration.registrar",
+                    "registration.expirationDate",
+                    "registration.daysUntilExpiration",
+                    "ssl.issuerCN",
+                    "ssl.validTo",
+                    "ssl.daysUntilExpiration",
+                    "ssl.trustedByNode",
+                    "subdomains.totalCertificatesFound",
+                    "subdomains.discovered",
+                    "techStack.server",
+                    "riskFlags"
+                ],
+                "flatten": [
+                    "registration",
+                    "ssl",
+                    "subdomains",
+                    "techStack"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "domain": {
+                        "label": "Domain",
+                        "format": "text"
+                    },
+                    "registration.registrar": {
+                        "label": "Registration: registrar",
+                        "format": "text"
+                    },
+                    "registration.expirationDate": {
+                        "label": "Registration: expiration date",
+                        "format": "date"
+                    },
+                    "registration.daysUntilExpiration": {
+                        "label": "Registration: days until expiration",
+                        "format": "number"
+                    },
+                    "ssl.issuerCN": {
+                        "label": "SSL: issuer CN",
+                        "format": "text"
+                    },
+                    "ssl.validTo": {
+                        "label": "SSL: valid to",
+                        "format": "date"
+                    },
+                    "ssl.daysUntilExpiration": {
+                        "label": "SSL: days until expiration",
+                        "format": "number"
+                    },
+                    "ssl.trustedByNode": {
+                        "label": "SSL: trusted by node",
+                        "format": "boolean"
+                    },
+                    "subdomains.totalCertificatesFound": {
+                        "label": "Subdomains: total certificates found",
+                        "format": "number"
+                    },
+                    "subdomains.discovered": {
+                        "label": "Subdomains: discovered",
+                        "format": "array"
+                    },
+                    "techStack.server": {
+                        "label": "Tech stack: server",
+                        "format": "text"
+                    },
+                    "riskFlags": {
+                        "label": "Risk flags",
+                        "format": "array"
+                    }
+                }
+            }
+        }
+    }
+}
